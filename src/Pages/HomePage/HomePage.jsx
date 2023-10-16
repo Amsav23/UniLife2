@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './HomePage.css'
 import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function HomePage() {
 
@@ -40,17 +41,27 @@ const handleSelect = (e) => {
         <Slider headline="Find student homes with bills included"
         subheadline="A simple and faster way to search for student accommodation"></Slider>
 
-<div className='searchbar-container'>
-    <select onChange={handleSelect} required className='searchbar-option'>
-        <option value="disable selected">Search by city</option>
-        {
-            cities.map(item =>
-                <option value={item.id} key={item.id}>{item.name}</option>
-            )
-        }
-    </select>
+    <div className='searchbar-container'>
+        <select onChange={handleSelect} required className='searchbar-option'>
+            <option value="disable selected">Search by city</option>
+            {
+                cities.map(item =>
+                    <option value={item.id} key={item.id}>{item.name}</option>
+                )
+            }
+        </select>
+        <Link to={`/details/${cityId}`}><button className="find-homes-button">Find Homes</button></Link>
+    </div>
 
-</div>
+    <h2>Student accommodations in our top cities</h2>
+    <div className='cityCard-container'>
+        {cities.slice(0, 9).map((city) => (
+          <>
+            <img src={city.image_url} />
+            <p className='city-name'>{city.name}</p>
+          </>
+        ))}
+      </div>
 
     </div>
   )
