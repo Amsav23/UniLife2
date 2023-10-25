@@ -1,8 +1,17 @@
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 100vh;
+}
+
 .cityCard-container {
     border: 2px purple solid;
     display: flex;
     flex-wrap: wrap;
     /* gap: 50px; */
-    gap: 25px;
+    gap: 30px;
     justify-content: center;
+    width: 80%;
 }
