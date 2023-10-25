@@ -1,0 +1,8 @@
+.cityCard-container {
+    border: 2px purple solid;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 50px; */
+    gap: 25px;
+    justify-content: center;
+}

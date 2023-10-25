@@ -3,6 +3,7 @@ import './HomePage.css'
 import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import CityCard from '../../Components/CityCard/CityCard'
 
 function HomePage() {
 
@@ -15,10 +16,11 @@ const [cityId, setCityId] = useState('')
 useEffect(
     () => {
         //make API call to filter
-        console.log("running useEffect")
+        //console.log("running useEffect")
         axios.get(`https://unilife-server.herokuapp.com/cities?limit=20`)
         .then(res => {
             // console.log(res.data.response)
+            //store in state
             setCities(res.data.response)
             }
         )
@@ -55,12 +57,19 @@ const handleSelect = (e) => {
 
     <h2>Student accommodations in our top cities</h2>
     <div className='cityCard-container'>
-        {cities.slice(0, 9).map((city) => (
+        {
+            cities.slice(0,9).map(item => <CityCard key={item.id} city={item} />)
+        }
+
+
+
+
+        {/* {cities.slice(0, 9).map((city) => (
           <>
             <img src={city.image_url} />
             <p className='city-name'>{city.name}</p>
           </>
-        ))}
+        ))} */}
       </div>
 
     </div>
