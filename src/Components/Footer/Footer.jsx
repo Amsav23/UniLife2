@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 import { BsFacebook } from 'react-icons/bs'
 import { AiFillTwitterCircle } from 'react-icons/ai'
-import { BsInstagram } from 'react-icons/bs'
+import { AiFillInstagram } from 'react-icons/ai'
 import { LiaCopyright } from 'react-icons/lia'
 
 function Footer() {
@@ -31,7 +31,7 @@ function Footer() {
             </div>
 
             <div className='icons'>
-            <BsInstagram />
+            <AiFillInstagram/>
             <p>Instagram</p>
             </div>
           </div>
@@ -43,7 +43,7 @@ function Footer() {
                 <p>Terms & Conditions</p>
                 <p>Privacy & Cookie Policies</p>
             </div>
-            <div class='footer-bottom-right'>
+            <div className='footer-bottom-right'>
                 <p>2022</p>
                 <p><LiaCopyright /> UniLife</p>
             </div>
