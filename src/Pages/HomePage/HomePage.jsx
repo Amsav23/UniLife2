@@ -76,25 +76,49 @@ const handleSelect = (e) => {
             <h2>Compare all inclusive student homes.</h2>
             <div className='compare-info-container'>
                 <div className='compare-icon-container'>
-                    <img src={SearchIcon} alt="icon"></img>
+                    <img src={SearchIcon} alt="icon" />
                     <h3 className='compare-icon-title'>Search</h3>
                     <p>Find your dream home in the perfect area near your university.</p>
                 </div>
 
                 <div className='compare-icon-container'>
-                    <img src={CompareIcon} alt="icon"></img>
+                    <img src={CompareIcon} alt="icon" />
                     <h3 className='compare-icon-title'>Compare</h3>
                     <p>Compare student accommodation to find the right home for you.</p>
                 </div>
 
                 <div className='compare-icon-container'>
-                    <img src={BillsIcon} alt="icon"></img>
+                    <img src={BillsIcon} alt="icon" />
                     <h3 className='compare-icon-title'>Bills Included</h3>
                     <p>Bills are included in all rent prices. No hidden fees.</p>
                 </div>
             </div> 
         </div>
 
+        <div className='bottom-banner'>
+            <div className='bottom-banner-info-container'>
+                <div className='bottom-banner-icon-container'>
+                    <img src={BestSelectionIcon} alt="" />
+                    <div className='bottom-banner-info'>
+                        <h3>Best Selection</h3>
+                        <p>Best selection of student accommodations.
+                            Never been easier to find a home that's right for you.</p>
+                    </div>
+                </div>
+
+                <div className='bottom-banner-icon-container'>
+                    <img src={FavoriteIcon} alt="" />
+                    <div className='bottom-banner-info'>
+                        <h3>Your Favorite</h3>
+                        <p>Shortlist your favorite properties and send enquiries in one click.</p>
+                    </div>
+                    
+                </div>
+
+                <button className='searchCompareBtn' onClick={() => window.scrollTo(0, 0)}>Search & Compare</button>
+                <img className='ManIcon' src={ManIcon} alt="" />
+            </div>
+        </div>
     </div>
   )
 }

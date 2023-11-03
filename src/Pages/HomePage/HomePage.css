@@ -73,3 +73,72 @@
     font-size: 1.25rem;
     color: var(--gray);
 }
+
+/*Bottom Banner*/
+.bottom-banner {
+    border: solid 2px purple;
+    width: 100%;
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* align-items: flex-end; */
+    /* margin: 1 rem 8rem 0 8rem; */
+}
+
+.bottom-banner-info-container {
+    border: solid 1px pink;
+    width: 100%;
+    /* display: flex; */
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    /* height: 35rem; */
+}
+
+.bottom-banner-icon-container {
+    border: solid blue 1px;
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    height: 5rem;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    /* gap: 100%; */
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    text-align: center;
+    height: 12rem; */
+}
+
+.bottom-banner-info {
+    border: solid green 1px;
+    gap: 12px;
+}
+
+.bottom-banner-icon-container img {
+    display: flex;
+    position:absolute;
+    /* align-self: flex-end; */
+    width: 4rem;
+}
+
+.searchCompareBtn {
+    width: 13%;
+    padding: 6px;
+    font-size: 18px;
+    color: var(--white);
+    /* background-color: #004494; */
+    background-color: var(--greenBlue);
+    border: none;
+    border-radius: 8px;
+}
+
+.ManIcon {
+    width: 30%;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: end;
+}
