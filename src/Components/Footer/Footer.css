@@ -25,6 +25,10 @@
     height: 43vh;
 }
 
+.footer-top-banner h2 {
+    font-weight: 500;
+}
+
 .footer-left {
     /* border: solid purple 2px; */
     font-size: 130%;

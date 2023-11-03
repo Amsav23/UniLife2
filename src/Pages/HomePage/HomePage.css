@@ -1,17 +1,75 @@
 .homepage-container {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     min-height: 100vh;
+    /* font-weight: 500; */
+}
+
+.homepage-container h2 {
+    font-weight: 500;
+    font-size: 2.5rem;
 }
 
 .cityCard-container {
     border: 2px purple solid;
     display: flex;
     flex-wrap: wrap;
-    /* gap: 50px; */
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
-    width: 80%;
+    margin: 2rem 0;
+    /* width: 90%; */
+}
+
+/*Homepage Compare Banner*/
+.homepage-compare-banner {
+    /* border: solid red 1px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 50px 0 60px 0;
+    background-color: var(--aliceblue);
+    border-radius: 15px;
+}
+
+.homepage-compare-banner h2 {
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+.compare-info-container {
+    /* border: solid blue 1px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0 0 0;
+}
+
+.compare-icon-container {
+    /* border: green solid 1px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    text-align: center;
+    height: 12rem;
+}
+
+.compare-icon-container img {
+    width: 20%;
+}
+
+.compare-icon-title {
+    /* border: solid purple 1px; */
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 1rem 0.5rem;
+}
+
+.compare-icon-container p {
+    font-size: 1.25rem;
+    color: var(--gray);
 }

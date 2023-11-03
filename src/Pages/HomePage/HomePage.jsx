@@ -4,6 +4,12 @@ import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import CityCard from '../../Components/CityCard/CityCard'
+import SearchIcon from '../../assets/SearchIcon.png'
+import CompareIcon from '../../assets/CompareIcon.png'
+import BillsIcon from '../../assets/BillsIcon.png'
+import BestSelectionIcon from '../../assets/BestSelectionIcon.png'
+import FavoriteIcon from '../../assets/FavoriteIcon.png'
+import ManIcon from '../../assets/ManIcon.png'
 
 function HomePage() {
 
@@ -60,6 +66,33 @@ const handleSelect = (e) => {
             {
                 cities.slice(0,9).map(item => <CityCard key={item.id} city={item} />)
             }
+        </div>
+
+
+        <button>See All Cities</button>
+        {/* <Link className='allCitiesBtn' to={'/see-all-cities'}>See All Cites</Link> */}
+
+        <div className='homepage-compare-banner'>
+            <h2>Compare all inclusive student homes.</h2>
+            <div className='compare-info-container'>
+                <div className='compare-icon-container'>
+                    <img src={SearchIcon} alt="icon"></img>
+                    <h3 className='compare-icon-title'>Search</h3>
+                    <p>Find your dream home in the perfect area near your university.</p>
+                </div>
+
+                <div className='compare-icon-container'>
+                    <img src={CompareIcon} alt="icon"></img>
+                    <h3 className='compare-icon-title'>Compare</h3>
+                    <p>Compare student accommodation to find the right home for you.</p>
+                </div>
+
+                <div className='compare-icon-container'>
+                    <img src={BillsIcon} alt="icon"></img>
+                    <h3 className='compare-icon-title'>Bills Included</h3>
+                    <p>Bills are included in all rent prices. No hidden fees.</p>
+                </div>
+            </div> 
         </div>
 
     </div>

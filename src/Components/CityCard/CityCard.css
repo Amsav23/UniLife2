@@ -3,8 +3,8 @@
 }
 
 .cityCard-img {
-    height: 230px;
-    width: 300px;
+    height: 21rem;
+    width: 26.5rem;
     border-radius: 20px;
     filter: blur(1px);
 }
@@ -15,7 +15,7 @@
     position: absolute;
     align-items: center;
     color: var(--white);
-    bottom: 90px;
-    left: 60px;
+    bottom: 9rem;
+    left: 7.5rem;
     width: 200px;
 }
