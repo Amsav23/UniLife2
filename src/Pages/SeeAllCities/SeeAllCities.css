@@ -1,6 +1,17 @@
-.search-title {
+.seeAllCities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.searchByCity-container {
     border: 1px red solid;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.cityCard-container {
+    color: blue;
 }

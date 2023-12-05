@@ -53,7 +53,7 @@ const handleSelect = (e) => {
                     )
                 }
             </select>
-            <Link to={`/details/${cityId}`}><button className="find-homes-button">Find Homes</button></Link>
+            <Link to={`/citydetails/${cityId}`}><button className="find-homes-button">Find Homes</button></Link>
         </div>
 
         <h2>Student accommodations in our top cities</h2>
@@ -61,6 +61,11 @@ const handleSelect = (e) => {
             {
                 cities.slice(0,9).map(item => <CityCard key={item._id} city={item} />)
             }
+
+            {/* I tried putting a link in to see if it would change the undefined 
+            status, but it didn't work */}
+            {/* <Link to={`/citydetails/${cityId}`}></Link> */}
+            
         </div>
 
 
