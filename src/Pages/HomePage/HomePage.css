@@ -21,6 +21,18 @@
     /* width: 90%; */
 }
 
+.allCitiesBtn {
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color: var(--greenBlue);
+    padding: 12px 40px;
+    margin: 3rem;  
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /*Homepage Compare Banner*/
 .homepage-compare-banner {
     /* border: solid red 1px; */

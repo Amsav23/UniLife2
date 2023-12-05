@@ -21,21 +21,16 @@ const [cityId, setCityId] = useState('')
 
 useEffect(
     () => {
-        //make API call to filter
-        //console.log("running useEffect")
+        //make API call to filter cities
+        console.log("running useEffect")
         axios.get(`https://unilife-server.herokuapp.com/cities?limit=20`)
         .then(res => {
-            // console.log(res.data.response)
+            console.log(res.data.response)
             //store in state
             setCities(res.data.response)
-            }
-        )
-        .catch(err => {
-            console.log(err)
-        }, []
-
-        )
-    }
+            })
+        .catch(err => console.log(err))
+        }, [] //runs only once when page loads
 )
 
 const handleSelect = (e) => {
@@ -54,7 +49,7 @@ const handleSelect = (e) => {
                 <option value="disable selected">Search by city</option>
                 {
                     cities.map(item =>
-                        <option value={item.id} key={item.id}>{item.name}</option>
+                        <option value={item.id} key={item._id}>{item.name}</option>
                     )
                 }
             </select>
@@ -64,13 +59,13 @@ const handleSelect = (e) => {
         <h2>Student accommodations in our top cities</h2>
         <div className='cityCard-container'>
             {
-                cities.slice(0,9).map(item => <CityCard key={item.id} city={item} />)
+                cities.slice(0,9).map(item => <CityCard key={item._id} city={item} />)
             }
         </div>
 
 
-        <button>See All Cities</button>
-        {/* <Link className='allCitiesBtn' to={'/see-all-cities'}>See All Cites</Link> */}
+        {/* <button>See All Cities</button> */}
+        <Link className='allCitiesBtn' to={'/allcities'}>See All Cites</Link>
 
         <div className='homepage-compare-banner'>
             <h2>Compare all inclusive student homes.</h2>
