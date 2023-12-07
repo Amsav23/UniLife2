@@ -10,6 +10,9 @@ function SeeAllCities() {
     //create state for cities
     const [cities, setCities] = useState([])
 
+    // //create state for individual city?
+    // const [city, setCity] = useState([])
+
     useEffect(
         () => {
             //make API call to get All of the cities
@@ -25,8 +28,24 @@ function SeeAllCities() {
     )
 
     //each city needs to link to City Details
-    //use onClick function
+    //need details of each city
+    //info about a single property URL
+    //https://unilife-server.herokuapp.com/properties/6364c5fdfff841b8724baccd
 
+    // useEffect(
+    //     () => {
+    //         //make API call to get single property
+    //         console.log("running second useEffect")
+    //         axios.get(`https://unilife-server.herokuapp.com/properties/`)
+    //         .then(
+    //             console.log(res)
+    //         )
+    //         .catch(err => console.log(err))
+    //     }, [] //runs only once when page loads
+    // )
+
+
+    //use onClick function
     const handleClick = (e) => {
         e.preventDefault();
         console.log('city was selected')
@@ -52,6 +71,9 @@ function SeeAllCities() {
                 ) //this maps all of the cities
                 }
             </div>
+
+            {/* not sure what I'm doing yet
+            <button onClick={() => this.handleClick(property_id)}></button> */}
         
 
             
