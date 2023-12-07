@@ -24,6 +24,15 @@ function SeeAllCities() {
             }, [] //runs only once when page loads
     )
 
+    //each city needs to link to City Details
+    //use onClick function
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        console.log('city was selected')
+    }
+    
+
   return (
     <div className='seeAllCities-container'>
         <Slider headline="Student Accomodation"
@@ -33,11 +42,21 @@ function SeeAllCities() {
 
         <div className='searchByCity-container'>
             <h1>Search by City</h1>
-        {
-            cities.map(item =>
-                <option value={item.id} key={item._id}>{item.name}</option>
-            ) //this maps all of the cities
-        }
+            <div className='city-btns'>
+            {
+                // <button onClick={handleClick}>Click here</button>
+                cities.map(item =>
+                    <button onClick={handleClick}>
+                        <option value={item.id} key={item._id}>{item.name}</option>
+                    </button>
+                ) //this maps all of the cities
+                }
+            </div>
+        
+
+            
+
+
 
         {/* <Link to={`/citydetails/${cityId}`}><button className="find-homes-button">Find Homes</button></Link> */}
 

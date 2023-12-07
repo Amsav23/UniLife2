@@ -6,12 +6,30 @@
 }
 
 .searchByCity-container {
-    border: 1px red solid;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 55px;
+    min-height: 30rem;
+    min-width: 85rem;
+    margin: 4rem;
 }
 
-.cityCard-container {
-    color: blue;
+.city-btns {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: [col1-start] auto [col2-start] auto [col3-start] auto 
+    [col3-end] auto [col4-start];
+}
+
+.city-btns button {
+    border: .5px solid var(--gray);
+    border-radius: 15px;
+    background-color: var(--white);
+    padding: 20px 60px;
+    font-size: 1.5rem;
+}
+
+.city-btns option {
+    font-weight: bold;
 }
