@@ -1,0 +1,27 @@
+.header-container {
+    background-color: var(--sky-blue);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+
+.uniLife_logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navBar-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    color: var(--white);
+}
+
+.navBar-icons {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
