@@ -11,6 +11,29 @@
     font-size: 2.5rem;
 }
 
+.searchbar-container {
+    display: flex;
+    /* position:absolute; */
+    border-radius: 15px;
+    padding: 3rem 15rem;
+    box-shadow: 1px 1px 5px 1px var(--gray);
+}
+
+.searchbar-option {
+    border: .5px solid var(--gray);
+    border-radius: 15px;
+    display: flex;
+    /* justify-content: space-around;
+    gap: 10px; */
+
+    width: 30rem;
+    padding: 10px 25px;
+    font-size: 20px;
+    /* margin-left: 10%; */
+    
+}
+
+/*MAPPING THE CITIES SECTION*/
 .cityCard-container {
     border: 2px purple solid;
     display: flex;

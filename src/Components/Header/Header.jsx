@@ -6,6 +6,8 @@ import { CiMail } from "react-icons/ci";
 import { Link } from 'react-router-dom'
 
 function Header() {
+
+
   return (
     <div className='header-container'>
       <Link to='/' className='uniLife_logo'>
@@ -17,8 +19,6 @@ function Header() {
         <p className='navBar-icons'> <IoIosHeartEmpty /> Shortlist</p>
         <p className='navBar-icons'> <CiMail /> Contact Us</p>
       </div>
-      
-      
       
     </div>
   )

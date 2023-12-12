@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './CityDetails.css'
 import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import PropertyCard from '../../Components/PropertyCard/PropertyCard'
 
 function CityDetails() {
 
@@ -15,17 +16,41 @@ function CityDetails() {
     const {cityId} = useParams()
     // console.log(typeof(cityId))
 
-    //endpoint for Single Properties in One City
-    //https://unilife-server.herokuapp.com/properties/city/{city_id}
+    //create state for single properties
+    const [property, setProperty] = useState()
 
-    useEffect (
+    //create state for all properties in a single city
+    const [properties, setProperties] = useState()
+
+
+    //endpoint for a Single Property
+    //https://unilife-server.herokuapp.com/cities/6364c5fdfff841b8724baccd
+    useEffect(
+        //get the data for this specific city
         () => {
-            console.log('city details is running')
-            axios.get(`https://unilife-server.herokuapp.com/properties/city/{city_id}`)
+            console.log('single property is running')
+            axios.get(`https://unilife-server.herokuapp.com/cities/${cityId}`)
             .then(res => {
-                console.log(res)
-            }
-            )
+                console.log(res.data.data[0])
+                //store state
+                setProperty(res.data.data[0])
+            })
+            .catch(err => console.log(err))
+        }, [] //runs only once when page
+    )
+
+    //endpoint for ALL Properties in One City
+    //https://unilife-server.herokuapp.com/properties/city/${cityId}
+    useEffect (
+        //get the data about the properties in this specific city
+        () => {
+            console.log('all properties is running')
+            axios.get(`https://unilife-server.herokuapp.com/properties/city/${cityId}`)
+            .then(res => {
+                console.log(res.data.response)
+                //store in state
+                setProperties(res.data.response)
+            })
             .catch(err => console.log(err))
         }, [] //runs only once when page loads
     )
@@ -53,6 +78,14 @@ function CityDetails() {
         </div>
 
         <div>Being a student in ...</div>
+
+
+        {/* <div className='PropertyCard-container'>
+            {
+                property.slice(0,9).map(item => <PropertyCard key={item._id} property={item} />)
+            }
+            
+        </div> */}
 
     </div>
   )
