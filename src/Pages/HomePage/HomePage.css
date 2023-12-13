@@ -3,45 +3,54 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    /* font-weight: 500; */
 }
 
 .homepage-container h2 {
     font-weight: 500;
     font-size: 2.5rem;
+    margin-top: 120px;
 }
 
 .searchbar-container {
     display: flex;
-    /* position:absolute; */
+    align-items: center;
+    gap: 70px;
     border-radius: 15px;
-    padding: 3rem 15rem;
-    box-shadow: 1px 1px 5px 1px var(--gray);
+    padding: 2rem 8rem;
+    box-shadow: 1px 1px 5px 1px var(--lightgray);
+    position: absolute;
+    bottom: 32%;
+    background-color: var(--white);
 }
 
 .searchbar-option {
-    border: .5px solid var(--gray);
+    border: 1px solid var(--lightgray);
     border-radius: 15px;
     display: flex;
-    /* justify-content: space-around;
-    gap: 10px; */
-
     width: 30rem;
     padding: 10px 25px;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.find-homes-btn {
+    color: var(--white);
+    background-color: var(--greenBlue);
     font-size: 20px;
-    /* margin-left: 10%; */
-    
+    padding: 8px 80px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /*MAPPING THE CITIES SECTION*/
 .cityCard-container {
-    border: 2px purple solid;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
     margin: 2rem 0;
-    /* width: 90%; */
 }
 
 .allCitiesBtn {
@@ -50,55 +59,43 @@
     color: white;
     background-color: var(--greenBlue);
     padding: 12px 40px;
-    margin: 3rem;  
+    margin: 1rem 0 4rem 0;  
     font-size: 1.3rem;
     font-weight: bold;
     text-decoration: none;
 }
 
-/*Homepage Compare Banner*/
+/*Homepage Compare Banner Section*/
 .homepage-compare-banner {
-    /* border: solid red 1px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 90%;
-    padding: 50px 0 60px 0;
     background-color: var(--aliceblue);
     border-radius: 15px;
-}
-
-.homepage-compare-banner h2 {
-    font-weight: 500;
-    font-size: 2.5rem;
+    margin-bottom: 6%;
+    cursor: default;
 }
 
 .compare-info-container {
-    /* border: solid blue 1px; */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 2rem 0 0 0;
+    justify-content: space-evenly;
+    margin: 3rem 0 7rem 0;
 }
 
 .compare-icon-container {
-    /* border: green solid 1px; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 25%;
     text-align: center;
-    height: 12rem;
 }
 
 .compare-icon-container img {
-    width: 20%;
+    width: 90px;
 }
 
 .compare-icon-title {
-    /* border: solid purple 1px; */
     font-size: 1.75rem;
     font-weight: 500;
     margin: 1rem 0.5rem;
@@ -109,71 +106,51 @@
     color: var(--gray);
 }
 
-/*Bottom Banner*/
 .bottom-banner {
-    border: solid 2px purple;
-    width: 100%;
-    /* display: flex; */
-    /* justify-content: space-around; */
-    /* align-items: flex-end; */
-    /* margin: 1 rem 8rem 0 8rem; */
-}
-
-.bottom-banner-info-container {
-    border: solid 1px pink;
-    width: 100%;
-    /* display: flex; */
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: flex-start; */
-    /* height: 35rem; */
-}
-
-.bottom-banner-icon-container {
-    border: solid blue 1px;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    width: 18%;
-    height: 5rem;
-    /* justify-content: space-evenly; */
-    justify-content: center;
-    /* gap: 100%; */
+    align-items: flex-start;
+    gap: 20px;
+    height: 40rem;
+    cursor: default;
+}
 
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
+.bottom-banner-container {
+    display: flex;
     align-items: center;
-    width: 25%;
-    text-align: center;
-    height: 12rem; */
+    gap: 20px;
+    font-size: 20px;
+    margin: 1% 0 0 5%;
 }
 
 .bottom-banner-info {
-    border: solid green 1px;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
 }
 
-.bottom-banner-icon-container img {
-    display: flex;
-    position:absolute;
-    /* align-self: flex-end; */
-    width: 4rem;
+.bottom-banner-info p {
+    color: var(--gray);
+    width: 85%;
 }
 
 .searchCompareBtn {
-    width: 13%;
-    padding: 6px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 20px;
     color: var(--white);
-    /* background-color: #004494; */
     background-color: var(--greenBlue);
     border: none;
     border-radius: 8px;
+    display: flex;
+    margin: 2% 0 0 12%;
+    cursor: pointer;
 }
 
 .ManIcon {
-    width: 30%;
     display: flex;
-    /* flex-direction: row; */
-    align-items: end;
+    position: relative;
+    left: 60%;
+    bottom: 36%;
 }

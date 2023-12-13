@@ -11,10 +11,10 @@ import BestSelectionIcon from '../../assets/BestSelectionIcon.png'
 import FavoriteIcon from '../../assets/FavoriteIcon.png'
 import ManIcon from '../../assets/ManIcon.png'
 
-function HomePage() {
 
+function HomePage() {
 //create user interface
-//how many cities are there when the page loads
+//how many cities are there when the page loads?
 
 const [cities, setCities] = useState([])
 const [cityId, setCityId] = useState('')
@@ -46,6 +46,7 @@ const handleSelect = (e) => {
 
         <div className='searchbar-container'>
             <select onChange={handleSelect} required className='searchbar-option'>
+                {/*this option allows the user to select a city*/}
                 <option value="disable selected">Search by city</option>
                 {
                     cities.map(item =>
@@ -53,25 +54,21 @@ const handleSelect = (e) => {
                     )
                 }
             </select>
-            <Link to={`/citydetails/${cityId}`}><button className="find-homes-button">Find Homes</button></Link>
+            <Link to={`/citydetails/${cityId}`}><button className="find-homes-btn">Find Homes</button></Link>
         </div>
 
+        {/*this section shows the city cards*/}
         <h2>Student accommodations in our top cities</h2>
         <div className='cityCard-container'>
             {
                 cities.slice(0,9).map(item => <CityCard key={item._id} city={item} />)
             }
-
-            {/* I tried putting a link in to see if it would change the undefined 
-            status, but it didn't work */}
-            {/* <Link to={`/citydetails/${cityId}`}></Link> */}
-            
         </div>
 
-
-        {/* <button>See All Cities</button> */}
+        {/*this button takes user to See All Cities page*/}
         <Link className='allCitiesBtn' to={'/allcities'}>See All Cites</Link>
 
+        {/*this section displays the bottom banner*/}
         <div className='homepage-compare-banner'>
             <h2>Compare all inclusive student homes.</h2>
             <div className='compare-info-container'>
@@ -96,28 +93,26 @@ const handleSelect = (e) => {
         </div>
 
         <div className='bottom-banner'>
-            <div className='bottom-banner-info-container'>
-                <div className='bottom-banner-icon-container'>
-                    <img src={BestSelectionIcon} alt="" />
-                    <div className='bottom-banner-info'>
-                        <h3>Best Selection</h3>
-                        <p>Best selection of student accommodations.
-                            Never been easier to find a home that's right for you.</p>
-                    </div>
+            <div className='bottom-banner-container'>
+                <img className='bottom-banner-icon' src={BestSelectionIcon} alt="" />
+                <div className='bottom-banner-info'>
+                    <h3>Best Selection</h3>
+                    <p>Best selection of student accommodations.
+                        Never been easier to find a home that's right for you.</p>
                 </div>
-
-                <div className='bottom-banner-icon-container'>
-                    <img src={FavoriteIcon} alt="" />
-                    <div className='bottom-banner-info'>
-                        <h3>Your Favorite</h3>
-                        <p>Shortlist your favorite properties and send enquiries in one click.</p>
-                    </div>
-                    
-                </div>
-
-                <button className='searchCompareBtn' onClick={() => window.scrollTo(0, 0)}>Search & Compare</button>
-                <img className='ManIcon' src={ManIcon} alt="" />
             </div>
+
+            <div className='bottom-banner-container'>
+                <img className='bottom-banner-icon' src={FavoriteIcon} alt="" />
+                <div className='bottom-banner-info'>
+                    <h3>Your Favorite</h3>
+                    <p>Shortlist your favorite properties and send enquiries in one click.</p>
+                </div>
+            </div>
+
+            {/*this button takes the user to the TOP of the page*/}
+            <button className='searchCompareBtn' onClick={() => window.scrollTo(0, 0)}>Search & Compare</button>
+            <img className='ManIcon' src={ManIcon} alt="" />
         </div>
     </div>
   )
