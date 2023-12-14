@@ -25,3 +25,14 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.allPropertiesDescription {
+    border: 1px solid pink;
+    width: 50%;
+    font-size: 30px;
+    margin: 10rem 0;
+    /* display: flex; */
+    /* align-content: space-evenly; */
+    /* justify-content: space-between; */
+    /* gap: 50px; */
+}

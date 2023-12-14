@@ -65,23 +65,29 @@ function CityDetails() {
         {/* check to see if the cityId return function works*/}
         <div>City Details {cityId}</div>
 
-
         <Slider headline="Search Accomodation"
         subheadline="Whatever you're after, we can help you 
         find the right student accomodation for you."></Slider>
 
-        <div>
-            {/* <p>Name: {properties?.city}</p> */}
-
-
+        <div className='cityDetailsFilterBar'>
             <p>min bedroom {properties?.availability}</p>
             <p>Min bathroom</p>
             <p>Max Price</p>
             <p>Home Type</p>
+        </div>
+        
 
-            <div className='allPropertiesContainer'>
-                {
-                    properties.map(item=> <div value={item.id} key={item._id}>
+        <div className='allPropertiesCount'>
+            {
+                properties.slice(0-1).map(item=> <div value={item.id} key={item._id}>
+                <p> Homes in {item.address.city}</p>
+                </div>)
+            }
+        </div>
+
+        <div className='allPropertiesContainer'>
+            {
+                properties.map(item=> <div value={item.id} key={item._id}>
                     <div className='propertyDetails'>
                         <img className='propertyImg' src={`${item.images[0]}`} alt=""></img>
                         <p>Euros: {item.rent}</p>
@@ -91,33 +97,19 @@ function CityDetails() {
                         <p>Furnished: {item.furnished}</p>
                         <p>Address: {item.address.street}</p>
                     </div>
-                    </div>)
+                </div>)
                 }
             </div>
-        </div>
+        
 
-        <div>
-            <p>Number of Homes in ...</p>
-        </div>
-
-        <div>Being a student in ...</div>
-
-        <div className='example'>
-                {
-                    properties.slice(0-1).map(item=> <div value={item.id} key={item._id}>
-                    <p>Being a student in {item.address.city}</p>
-                    <p>{item.property_description}</p>
-                    </div>)
-                }
-            </div>
-
-
-        {/* <div className='PropertyCard-container'>
+        <div className='allPropertiesDescription'>
             {
-                property.slice(0,9).map(item => <PropertyCard key={item._id} property={item} />)
+                properties.slice(0-1).map(item=> <div value={item.id} key={item._id}>
+                <h3>Being a student in {item.address.city}</h3>
+                <p>{item.property_description}</p>
+                </div>)
             }
-            
-        </div> */}
+        </div>
 
     </div>
   )
