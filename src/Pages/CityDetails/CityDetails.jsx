@@ -4,6 +4,11 @@ import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 // import PropertyCard from '../../Components/PropertyCard/PropertyCard'
+import { MdOutlineBed } from "react-icons/md";
+import { MdOutlineBathtub } from "react-icons/md";
+import { PiMapPin } from "react-icons/pi";
+import { PiHouse } from "react-icons/pi";
+// import PropertyCard from '../../Components/PropertyCard/PropertyCard'
 
 function CityDetails() {
 
@@ -59,6 +64,13 @@ function CityDetails() {
         }, [] //runs only once when page loads
     )
 
+
+    const handleSelect = (e) => {
+        console.log('handleSelect is working', e.target.value)
+        //store in state
+        // setProperties(e.target.value)
+    }
+
     
   return (
     <div className='cityDetails-container'>
@@ -70,17 +82,33 @@ function CityDetails() {
         find the right student accomodation for you."></Slider>
 
         <div className='cityDetailsFilterBar'>
-            <p>min bedroom {properties?.availability}</p>
-            <p>Min bathroom</p>
-            <p>Max Price</p>
-            <p>Home Type</p>
+            {/*this filters the menu for number of bedrooms, bathrooms, etc*/}
+            <select onChange={handleSelect} required className='filter-bar'>
+                {<option value='disable selected'>Min Bedroom</option>}
+
+                {/*this isn't actually mapping it yet, so need to work on this*/}
+                {
+                    properties.map(item =>
+                        <option value={item.id} key={item._id}>{item.bedroom_prices[0-4]}</option>
+                    )
+                }
+            </select>
+            <select>
+                {<option value='disable selected'>Min Bathroom</option>}
+            </select>
+            <select>
+                {<option value='disable selected'>Max Price</option>}
+            </select>
+            <select>
+                {<option value='disable selected'>Home Type</option>}
+            </select>
         </div>
-        
+       
 
         <div className='allPropertiesCount'>
             {
                 properties.slice(0-1).map(item=> <div value={item.id} key={item._id}>
-                <p> Homes in {item.address.city}</p>
+                <p>Homes in {item.address.city}</p>
                 </div>)
             }
         </div>
@@ -90,16 +118,18 @@ function CityDetails() {
                 properties.map(item=> <div value={item.id} key={item._id}>
                     <div className='propertyDetails'>
                         <img className='propertyImg' src={`${item.images[0]}`} alt=""></img>
-                        <p>Euros: {item.rent}</p>
-                        <p>Bedrooms {item.bedroom_count}</p>
-                        <p>Bathrooms {item.bathroom_count}</p>
+                        <p>€{item.rent}</p>
+                        <p className='propertyDetailsIcon'><MdOutlineBed /> {item.bedroom_count}</p>
+                        <p className='propertyDetailsIcon'><MdOutlineBathtub /> {item.bathroom_count}</p>
                         <p>Property: {item.property_type}</p>
                         <p>Furnished: {item.furnished}</p>
-                        <p>Address: {item.address.street}</p>
+                        <p className='propertyDetailsIcon'><PiMapPin /> 
+                        {item.address.street}, {item.address.city}, {item.address.postcode}</p>
+                        <button className='viewHomeBtn'><PiHouse /> View Home</button>
                     </div>
                 </div>)
-                }
-            </div>
+            }
+        </div>
         
 
         <div className='allPropertiesDescription'>
