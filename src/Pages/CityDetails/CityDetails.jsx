@@ -75,7 +75,8 @@ function CityDetails() {
   return (
     <div className='cityDetails-container'>
         {/* check to see if the cityId return function works*/}
-        <div>City Details {cityId}</div>
+        {/* <div>City Details {cityId}</div> */}
+        {/*it works!*/}
 
         <Slider headline="Search Accomodation"
         subheadline="Whatever you're after, we can help you 
@@ -83,8 +84,9 @@ function CityDetails() {
 
         <div className='cityDetailsFilterBar'>
             {/*this filters the menu for number of bedrooms, bathrooms, etc*/}
-            <select onChange={handleSelect} required className='filter-bar'>
-                {<option value='disable selected'>Min Bedroom</option>}
+            <p className='propertyTitle'>Min Bedroom</p>
+            <select onChange={handleSelect} required className='filterBarOption'>
+                {<option value='disable selected'>Any bedroom</option>}
 
                 {/*this isn't actually mapping it yet, so need to work on this*/}
                 {
@@ -93,14 +95,17 @@ function CityDetails() {
                     )
                 }
             </select>
-            <select>
-                {<option value='disable selected'>Min Bathroom</option>}
+            <p className='propertyTitle'>Min Bathroom</p>
+            <select className='filterBarOption'>                
+                {<option value='disable selected'>Any bathroom</option>}
             </select>
-            <select>
-                {<option value='disable selected'>Max Price</option>}
+            <p className='propertyTitle'>Max Price</p>
+            <select className='filterBarOption'>
+                {<option value='disable selected'>Any price</option>}
             </select>
-            <select>
-                {<option value='disable selected'>Home Type</option>}
+            <p className='propertyTitle'>Home Type</p>
+            <select className='filterBarOption'>
+                {<option value='disable selected'>Any type</option>}
             </select>
         </div>
        
