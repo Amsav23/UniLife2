@@ -4,3 +4,24 @@
     align-items: center;
     min-height: 100vh;
 }
+
+.allPropertiesContainer {
+    border: solid 1px red;
+    font-size: 30px;
+    display: grid;
+    grid-template-columns: [col1-start] auto [col2-start] auto [col3-start]
+    auto [col3-end];
+    gap: 50px;
+    /* flex-direction: column; */
+}
+
+.propertyImg {
+    width: 100%;
+}
+
+.propertyDetails {
+    border: solid 1px blue;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
