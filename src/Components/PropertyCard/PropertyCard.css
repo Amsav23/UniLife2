@@ -1,0 +1,10 @@
+.property-container {
+    border: solid 1px blue;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.propertyImg {
+    width: 100%;
+}
