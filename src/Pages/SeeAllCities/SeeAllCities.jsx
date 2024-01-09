@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './SeeAllCities.css'
 import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
-// import CityCard from '../../Components/CityCard/CityCard'
+
 
 function SeeAllCities() {
     //this page needs to show ALL of the cities
@@ -71,32 +71,9 @@ function SeeAllCities() {
                 ) //this maps all of the cities
                 }
             </div>
-
-            {/* not sure what I'm doing yet
-            <button onClick={() => this.handleClick(property_id)}></button> */}
-        
-
-            
-
-
-
-        {/* <Link to={`/citydetails/${cityId}`}><button className="find-homes-button">Find Homes</button></Link> */}
-
-        {/*I want each city to be recognized when I link to it */}
-
-
-
-        {/* <div className='cityCard-container'>
-            {
-                cities.map(item => <CityCard key={item._id} city={item} />)
-            }
-        </div> */}
-
         </div>
-
     </div>
 
-        
   )
 }
 

@@ -154,3 +154,12 @@
     left: 60%;
     bottom: 36%;
 }
+
+/*MEDIA QUERIES*/
+@media (max-width: 768px) {
+
+    .homepage-container{
+        max-width: 70vh;
+    }
+
+}

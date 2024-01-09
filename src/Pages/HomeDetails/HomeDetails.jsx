@@ -3,7 +3,9 @@ import './HomeDetails.css'
 
 function HomeDetails() {
   return (
-    <div>HomeDetails</div>
+    <div className='homeDetails-container'>
+      HomeDetails
+    </div>
   )
 }
 

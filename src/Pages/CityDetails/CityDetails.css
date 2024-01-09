@@ -2,32 +2,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 150vh;
 }
 
-.cityDetailsFilterBar {
-    border: 1px solid var(--lightgray);
+.city-details-filter-bar {
+    border: 2px solid var(--lightgray);
     border-radius: 15px;
+    background-color: var(--white);
     display: flex;
-    /* display: grid; */
-    /* gri */
-    /* flex-direction: row; */
-    /* grid-template: "a a" 50px "b c" 50px "b c" 50px; */
-    /* grid-template-columns: ; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: space-around; */
-    padding: 40px 150px;
-    /* gap: 30px; */
+    flex-direction: column;
+    width: 80%;
+    gap: 15px;
+    position: absolute;
+    bottom: 250px;
+
+    padding: 40px 50px;
 }
 
-.filterBarOption {
+.search-bar-top {
+    /* background-color: pink; */
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar-bottom {
+    /* background-color: green; */
+    font-size: 20px;
+    display: flex;
+    /* gap: 160px; */
+    justify-content: space-between;
+}
+
+/* .filterBarOption {
     background-color: pink;
     border: 1px solid var(--lightgray);
     border-radius: 12px;
     font-size: 25px;
     /* width: 250px; */
-    padding: 5px 60px;
+    /* padding: 5px 60px; */
     /* margin-left: 10%; */
     /* display: flex;
     justify-content: flex-start;
@@ -35,34 +48,22 @@
     align-self: flex-start;
      */
     /* flex-direction: f; */
-}
+/* } */
 
-.propertyTitle {
+/* .propertyTitle {
     border: 1px solid green;
     display: flex;
-    /* flex-direction: row; */
-}
+    /* flex-direction: row; 
+}*/
 
-.allPropertiesContainer {
-    border: solid 1px red;
-    font-size: 30px;
-    display: grid;
-    grid-template-columns: [col1-start] auto [col2-start] auto [col3-start]
-    auto [col3-end];
-    gap: 50px;
-    /* flex-direction: column; */
-}
 
-.propertyImg {
-    width: 100%;
-}
-
-.propertyDetails {
+/* .propertyDetails {
     border: solid 1px blue;
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
+} */
+
 
 .allPropertiesDescription {
     /* border: 1px solid red; */

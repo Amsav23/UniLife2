@@ -1,10 +1,76 @@
-.property-container {
-    border: solid 1px blue;
+.property-card-container {
+    border: solid 1px var(--lightgray);
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    margin-top: 200px;
+    cursor: default;
 }
 
 .propertyImg {
-    width: 100%;
+    width: 10px;
+    height: 10px;
+}
+
+.property-details-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.blue-box {
+    background-color: var(--greenBlue);
+    color: var(--white);
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.blue-box-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blue-box-left p {
+    font-size: 13px;
+}
+
+.blue-box-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    font-size: 20px;
+}
+
+.white-box {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.white-box-top {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.white-box-bottom {
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.view-home-btn {
+    padding: 20px;
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    border-top: 1px solid var(--lightgray);
 }
