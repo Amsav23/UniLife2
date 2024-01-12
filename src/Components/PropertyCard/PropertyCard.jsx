@@ -4,6 +4,7 @@ import { MdOutlineBed } from "react-icons/md";
 import { MdOutlineBathtub } from "react-icons/md";
 import { PiMapPin } from "react-icons/pi";
 import { PiHouse } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
 function PropertyCard({property}) {
 
@@ -36,9 +37,10 @@ function PropertyCard({property}) {
       </div>
 
       <div className='view-home-btn'>
-        <p className='property-details-icon'><PiHouse />
-        View Home</p>
+        <Link to={`/homedetails/${property?._id}`}><button className='property-details-icon'>
+          <PiHouse />View Homes</button></Link>
       </div>
+
     </div>
   )
 }
