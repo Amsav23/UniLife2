@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 150vh;
+    /* min-height: 100vh; */
 }
 
 .city-details-filter-bar {
@@ -15,23 +15,32 @@
     gap: 15px;
     position: absolute;
     bottom: 250px;
-
     padding: 40px 50px;
 }
 
 .search-bar-top {
-    /* background-color: pink; */
     font-size: 25px;
     display: flex;
     justify-content: space-between;
 }
 
 .search-bar-bottom {
-    /* background-color: green; */
     font-size: 20px;
     display: flex;
-    /* gap: 160px; */
     justify-content: space-between;
+}
+
+.title-card {
+    margin-top: 130px;
+    display: flex;
+}
+
+.property-card-space {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+    gap: 50px;
 }
 
 /* .filterBarOption {
@@ -66,28 +75,25 @@
 
 
 .allPropertiesDescription {
-    /* border: 1px solid red; */
     background-color: var(--aliceblue);
     display: flex;
     flex-direction: row;
     width: 90%;
     padding: 80px 20px;
-    margin: 80px 0px;
+    margin: 100px 0px;
     justify-content: space-evenly;
     border-radius: 15px;
 }
 
 .description-info {
-    /* border: solid 1px green; */
     width: 35%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     font-size: 20px;
 }
 
 .allPropertiesDescription img {
-    /* border: solid 1px blue; */
     width: 40%;
     border-radius: 15px;
 }

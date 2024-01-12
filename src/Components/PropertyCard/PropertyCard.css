@@ -3,13 +3,14 @@
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
+    width: 28%;
     cursor: default;
 }
 
-.propertyImg {
-    width: 10px;
-    height: 10px;
+.property-card-container img {
+    width: 100%;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
 .property-details-icon {

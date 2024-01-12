@@ -4,18 +4,19 @@ import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import PropertyCard from '../../Components/PropertyCard/PropertyCard'
-import property1_img from '../../assets/property1.png'
+// import property1_img from '../../assets/property1.png'
 
 
 function CityDetails() {
 
-    const property1 = {
-        rent: 110,
-        bedroom_count: 4,
-        bathroom_count: 2,
-        _id: 99,
-        images: [property1_img]
-    }
+    //This is if I ever wanted to style the property cards manually if the api was down
+    // const property1 = {
+    //     rent: 110,
+    //     bedroom_count: 4,
+    //     bathroom_count: 2,
+    //     _id: 99,
+    //     images: [property1_img]
+    // }
 
     //this page shows details about a specific city
     //this page shows ALL PROPERTIES IN A CITY
@@ -32,37 +33,39 @@ function CityDetails() {
     const [cityInfo, setCityInfo] = useState()
 
     //create state for ALL PROPERTIES IN A CITY
-    const [properties, setProperties] = useState([property1])
+    const [properties, setProperties] = useState([])
     //square brackets are because this data is an array
+    //This const is part of constructing manually//
+    // const [properties, setProperties] = useState([property1])
 
 
 
     //Function for ALL PROPERTIES IN A CITY
-    // useEffect (
+    useEffect (
         
-    //     () => {
-    //         //get the data about the properties in this specific city
-    //         console.log('all properties in a city is running')
-    //         axios.get(`https://unilife-server.herokuapp.com/properties/city/${cityId}`)
-    //         .then(res => {
-    //             console.log(res.data.response)
-    //             //store in state
-    //             setProperties(res.data.response)
-    //         })
-    //         .catch(err => console.log(err))
+        () => {
+            //get the data about the properties in this specific city
+            console.log('all properties in a city is running')
+            axios.get(`https://unilife-server.herokuapp.com/properties/city/${cityId}`)
+            .then(res => {
+                console.log(res.data.response)
+                //store in state
+                setProperties(res.data.response)
+            })
+            .catch(err => console.log(err))
 
 
-    //         //get the data about this specific city
-    //         axios.get(`https://unilife-server.herokuapp.com/cities/${cityId}`)
-    //         .then(res => {
-    //             console.log(res.data.data[0])
-    //             //where do I put this data?
-    //             setCityInfo(res.data.data[0])
+            //get the data about this specific city
+            axios.get(`https://unilife-server.herokuapp.com/cities/${cityId}`)
+            .then(res => {
+                console.log(res.data.data[0])
+                //where do I put this data?
+                setCityInfo(res.data.data[0])
                 
-    //         })
-    //         .catch(err => console.log(err))
-    //     }, [] //runs only once when page loads
-    // )
+            })
+            .catch(err => console.log(err))
+        }, [] //runs only once when page loads
+    )
 
 
     const handleSelect = (e) => {
@@ -119,17 +122,17 @@ function CityDetails() {
         </div>
        
   
-        {/* <h2>{cityInfo?.property_count} Homes in {cityInfo?.name}</h2> */}
+        <h2 className='title-card'>{cityInfo?.property_count} Homes in {cityInfo?.name}</h2>
                 
 
-        <div>
+        <div className='property-card-space'>
             {
                 properties.map(item=> <PropertyCard key={item?._id} property={item}/> )
             }
         </div>
         
 
-        {/* <div className='allPropertiesDescription'>
+        <div className='allPropertiesDescription'>
             <div className='description-info'>
                 <h2>Being a student in {cityInfo?.name}</h2>
                 <p>{cityInfo?.student_life}</p>
@@ -137,7 +140,7 @@ function CityDetails() {
             </div>
             <img src={cityInfo?.image_url} />
             
-        </div> */}
+        </div>
 
     </div>
   )

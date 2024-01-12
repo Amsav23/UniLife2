@@ -1,5 +1,5 @@
-import React from 'react'
-import './PropertyCard.css'
+import React from 'react';
+import './PropertyCard.css';
 import { MdOutlineBed } from "react-icons/md";
 import { MdOutlineBathtub } from "react-icons/md";
 import { PiMapPin } from "react-icons/pi";
@@ -25,18 +25,20 @@ function PropertyCard({property}) {
 
       <div className='white-box'>
         <div className='white-box-top'>
-          <p>Detached {property?.property_type}</p>
-          <p>Fully Furnished {property?.furnished}</p>
+          <p>{property?.property_type}</p>
+          <p>{property?.furnished}</p>
         </div>
 
         <div className='white-box-bottom'>
-          <p>Address line here</p>
-          {/* <p className='propertyDetailsIcon'><PiMapPin />  */}
-          {/* {property?.address.city}, {property?.address.street}, {property?.address.postcode}</p> */}
+          <p className='property-details-icon'><PiMapPin /> 
+          {property?.address.city}, {property?.address.street}, {property?.address.postcode}</p>
         </div>
       </div>
 
-      <div className='view-home-btn'><PiHouse /> View Home</div>
+      <div className='view-home-btn'>
+        <p className='property-details-icon'><PiHouse />
+        View Home</p>
+      </div>
     </div>
   )
 }
