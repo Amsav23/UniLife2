@@ -41,27 +41,29 @@ function HomeDetails() {
   
   return (
     <div className='home-details-container'>
-      <div className='back-option'>Back to Search</div>
+      {/* <button>Back to Search</button> */}
 
-      <div className='photos-container'>
+    
         <ImageBox imgs={propertyImages}></ImageBox>
-      </div>
-
-      <div className='city-info-box-container'>
+        
         <CityInfoBox property={singleProperty}></CityInfoBox>
-      </div>
+     
 
-      <div className='description-box-container'>
-        <h2>Description</h2>
-        <p>{singleProperty?.property_description}</p>
-      </div>
+     
+        <div className='description-box-container'>
+          <h2>Description</h2>
+          <p>{singleProperty?.property_description}</p>
+        </div>
+     
 
-      <div className='bedroom-prices-container'>
-        <BedroomPricesBox prices={singleProperty?.bedroom_prices} />        
-      </div>
+        <BedroomPricesBox prices={singleProperty?.bedroom_prices} />
+
 
       <div className='key-features-container'>
-        <p>{singleProperty?.key_features}</p>
+        <h2>Key Features</h2>
+        {
+        singleProperty?.key_features?.map((item, index)=><p key={index}>{item}</p>)
+        }
       </div>
       
     </div>

@@ -1,12 +1,20 @@
 import React from 'react'
 import './ImageBox.css'
 
-function ImageBox({propertyImages}) {
+function ImageBox({imgs}) {
     
   return (
     <div className='photos-box'>
-        Photo Box
-        <p>{propertyImages?.images[0]}</p>
+      
+      <img className='top-image' src={imgs[0]} />
+    
+      <div className='bottom-images'>
+        <img src={imgs[1]} />
+        <img src={imgs[2]} />
+        <img src={imgs[3]} />
+      </div>
+
+      {/* <p>{propertyImages?.images[0]}</p> */}
     </div>
   )
 }
