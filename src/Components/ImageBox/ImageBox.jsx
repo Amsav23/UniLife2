@@ -14,7 +14,6 @@ function ImageBox({imgs}) {
         <img src={imgs[3]} />
       </div>
 
-      {/* <p>{propertyImages?.images[0]}</p> */}
     </div>
   )
 }

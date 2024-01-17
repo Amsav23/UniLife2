@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import ImageBox from '../../Components/ImageBox/ImageBox'
 import CityInfoBox from '../../Components/CityInfoBox/CityInfoBox'
 import BedroomPricesBox from '../../Components/BedroomPricesBox/BedroomPricesBox'
+import { IoMdCheckmark } from "react-icons/io";
 
 
 function HomeDetails() {
@@ -48,21 +49,22 @@ function HomeDetails() {
         
         <CityInfoBox property={singleProperty}></CityInfoBox>
      
-        <div className='description-box-container'>
+        <div className='description-container'>
           <h2>Description</h2>
           <p>{singleProperty?.property_description}</p>
         </div>
      
 
-        <BedroomPricesBox prices={singleProperty?.bedroom_prices} />
+        <BedroomPricesBox prices={singleProperty?.bedroom_prices}/>
 
 
-      <div className='key-features-container'>
-        <h2>Key Features</h2>
-        {
-        singleProperty?.key_features?.map((item, index)=><p key={index}>{item}</p>)
-        }
-      </div>
+        <div className='key-features-container'>
+          <h2>Key Features</h2>
+            {
+              singleProperty?.key_features?.map((item, index)=>
+              <p key={index}><IoMdCheckmark className='checkmark' /> {item}</p>)
+            }
+        </div>
       
     </div>
   )
