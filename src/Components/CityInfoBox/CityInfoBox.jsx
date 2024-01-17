@@ -7,21 +7,43 @@ function CityInfoBox({property}) {
 
   return (
     <div className='city-info-container'>
-        <div className='city-info-address'>
-            <p>{property?.address?.street}, {property?.address?.city}, {property?.address?.postcode}</p>
-        </div>
 
-        <div className='info-top-row'>
-            <p>Bedrooms <MdOutlineBed /> {property?.bedroom_count}</p>
-            <p>Bathrooms <MdOutlineBathtub/> {property?.bathroom_count}</p>
-            <p>Property Type {property?.property_type}</p>
-        </div>
+      <div className='small-box1'>
+        <p>{property?.address?.street}</p>
+        <p> {property?.address?.city}, {property?.address?.postcode}</p>
+      </div>
 
-        <div className='info-bottom-row'>
-            <p>Price €{property?.rent}</p>
-            <p>Furnished type {property?.furnished}</p>
-            <p>Available from {property?.availability}</p>
-        </div>
+        <div className='small-box2'>
+          <div className='small-box3'>
+            <p>Bedrooms</p>
+            <p>Bathrooms</p>
+            <p>Property Type</p>
+          </div>
+
+          <div className='small-box4'>
+            <h3><MdOutlineBed /> {property?.bedroom_count}</h3>
+            <h3><MdOutlineBathtub/> {property?.bathroom_count}</h3>
+            <h3>{property?.property_type}</h3>
+          </div>
+
+          <div className='small-box3'>
+            <p>Price</p>
+            <p>Furnished Type</p>
+            <p>Available from</p>
+          </div>
+
+          <div className='small-box4'>
+            <h3>€{property?.rent}</h3>
+            <h3>{property?.furnished}</h3>
+            <h3>{property?.availability}</h3>
+          </div>
+        </div> 
+
+      <div className='small-box5'>
+        <button className='details-btns1'>Shortlist</button>
+        <button className='details-btns 2'>Book Viewing</button>
+      </div>        
+
     </div>
 
   )

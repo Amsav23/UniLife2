@@ -23,7 +23,7 @@ function HomeDetails() {
   useEffect (
 
       () => {
-        console.log('endpoint is running')
+        console.log('endpoint for Home Details is running')
         axios.get(`https://unilife-server.herokuapp.com/properties/${propertyId}`)
         .then(res => {
           console.log(res.data)
@@ -47,8 +47,6 @@ function HomeDetails() {
         <ImageBox imgs={propertyImages}></ImageBox>
         
         <CityInfoBox property={singleProperty}></CityInfoBox>
-     
-
      
         <div className='description-box-container'>
           <h2>Description</h2>
