@@ -4,7 +4,6 @@ import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import PropertyCard from '../../Components/PropertyCard/PropertyCard'
-// import property1_img from '../../assets/property1.png'
 
 
 function CityDetails() {
@@ -24,7 +23,6 @@ function CityDetails() {
     //how do I know which city?
     //the city id is in the URL
     //get city id from the URL with useParams
-
 
     const {cityId} = useParams()
     //hhttps://unilife-server.herokuapp.com/properties/city/633a96af6893d471a68cc88f
@@ -56,6 +54,7 @@ function CityDetails() {
 
 
             //get the data about this specific city
+            console.log('data about specific city is running')
             axios.get(`https://unilife-server.herokuapp.com/cities/${cityId}`)
             .then(res => {
                 console.log(res.data.data[0])
@@ -68,11 +67,11 @@ function CityDetails() {
     )
 
 
-    const handleSelect = (e) => {
-        console.log('handleSelect is working', e.target.value)
-        //store in state
-        // setProperties(e.target.value)
-    }
+    // const handleSelect = (e) => {
+    //     console.log('handleSelect is working', e.target.value)
+    //     store in state
+    //     setProperties(e.target.value)
+    // }
 
     
   return (
@@ -127,7 +126,7 @@ function CityDetails() {
 
         <div className='property-card-space'>
             {
-                properties.map(item=> <PropertyCard key={item?._id} property={item}/> )
+                properties?.map((item)=><PropertyCard key={item?._id} property={item}/>)
             }
         </div>
         

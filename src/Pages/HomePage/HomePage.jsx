@@ -50,8 +50,7 @@ const handleSelect = (e) => {
                 <option value="disable selected">Search by city</option>
                 {
                     cities.map(item =>
-                        <option value={item.id} key={item._id}>{item.name}</option>
-                    )
+                        <option value={item.id} key={item._id}>{item.name}</option>)
                 }
             </select>
             <Link to={`/citydetails/${cityId}`}><button className="find-homes-btn">Find Homes</button></Link>
