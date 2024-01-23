@@ -27,16 +27,16 @@ function SeeAllCities() {
             }, [] //runs only once when page loads
     )
 
-    //each city needs to link to City Details
-    //need details of each city
-    //info about a single property URL
-    //https://unilife-server.herokuapp.com/properties/6364c5fdfff841b8724baccd
+    // each city needs to link to City Details
+    // need details of each city
+    // info about a single property URL
+    // https://unilife-server.herokuapp.com/properties/6364c5fdfff841b8724baccd
 
     // useEffect(
     //     () => {
     //         //make API call to get single property
     //         console.log("running second useEffect")
-    //         axios.get(`https://unilife-server.herokuapp.com/properties/`)
+    //         axios.get(`https://unilife-server.herokuapp.com/properties/${property_id}`)
     //         .then(
     //             console.log(res)
     //         )
