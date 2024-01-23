@@ -40,8 +40,8 @@ function CityInfoBox({property}) {
         </div> 
 
       <div className='small-box5'>
-        <button className='details-btns1'>Shortlist</button>
-        <button className='details-btns 2'>Book Viewing</button>
+        <button className='details-btn1'>Shortlist</button>
+        <button className='details-btn2'>Book Viewing</button>
       </div>        
 
     </div>

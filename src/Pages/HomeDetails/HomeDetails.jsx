@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import './HomeDetails.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import ImageBox from '../../Components/ImageBox/ImageBox'
 import CityInfoBox from '../../Components/CityInfoBox/CityInfoBox'
 import BedroomPricesBox from '../../Components/BedroomPricesBox/BedroomPricesBox'
 import { IoMdCheckmark } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 
 function HomeDetails() {
@@ -18,6 +20,10 @@ function HomeDetails() {
 
   //create state for property info
   const [propertyImages, setPropertyImages] = useState([])
+
+  //create state for bedroom prices
+  const [prices, setPrices] = useState([])
+
 
   //this endpoint is for a single property
   //https://unilife-server.herokuapp.com/properties/6364c5fdfff841b8724baccd
@@ -31,6 +37,9 @@ function HomeDetails() {
           //I have data, now I need to store it
           setSingleProperty(res.data)
           setPropertyImages(res.data?.images)
+          console.log(res.data.bedroom_prices)
+          // setPrices(res.data.bedroom_prices)
+          setPrices(Object.values(res.data.bedroom_prices))
         })
         
         .catch(err => console.log(err))
@@ -41,8 +50,16 @@ function HomeDetails() {
 
   
   return (
-    <div className='home-details-container'>
-      {/* <button>Back to Search</button> */}
+
+    <div className='home-details-page'>
+
+{/* <Link to={`/citydetails/${cityId}`}><button className="find-homes-btn">Find Homes</button></Link> */}
+
+      <Link to={`/allcities`} style={{textDecoration: 'none'}}>
+        <button className='back-btn'><IoIosArrowBack /> Back to Search</button>
+      </Link>
+    
+      <div className='home-details-container'>
 
     
         <ImageBox imgs={propertyImages}></ImageBox>
@@ -55,7 +72,7 @@ function HomeDetails() {
         </div>
      
 
-        <BedroomPricesBox prices={singleProperty?.bedroom_prices}/>
+        <BedroomPricesBox prices={prices}/>
 
 
         <div className='key-features-container'>
@@ -66,6 +83,8 @@ function HomeDetails() {
             }
         </div>
       
+      </div>
+
     </div>
   )
 }

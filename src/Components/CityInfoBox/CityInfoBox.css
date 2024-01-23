@@ -1,7 +1,6 @@
 .city-info-container {
     border: solid 1px var(--lightgray);
     border-radius: 20px;
-    margin: 30px 50px 20px 40px;
 }
 
 .small-box1 {
@@ -45,7 +44,7 @@
     margin-top: 85px;
 }
 
-.details-btns1 {
+.details-btn1 {
     background-color: var(--white);
     font-size: 25px;
     border: solid 1px var(--lightgray);
@@ -53,7 +52,7 @@
     padding: 12px 100px;
 }
 
-.details-btns {
+.details-btn2 {
     background-color: var(--greenBlue);
     color: var(--white);
     font-size: 25px;

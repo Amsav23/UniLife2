@@ -3,18 +3,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0px 20px 50px;
 }
 
 .top-image {
-    /* border: solid 1px red; */
     width: 100%;
     border-radius: 20px;
 }
 
 
 .bottom-images {
-    /* border: solid 1px blue; */
     display: flex;
     justify-content: space-between;
     margin-top: 10px;

@@ -1,7 +1,18 @@
 .bedroom-prices-box {
-    border: solid black 1px;
-    margin: 30px 50px 20px 40px;
-    font-size: 20px;
-    /* height: 500px; */
+    /* margin: 30px 50px 20px 40px; */
+    font-size: 25px;
 }
 
+.prices-info-box {
+    border: solid 1px var(--lightgray);
+    border-radius: 25px;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.box {
+    border-bottom: solid 1px var(--lightgray);
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
