@@ -4,6 +4,7 @@ import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import PropertyCard from '../../Components/PropertyCard/PropertyCard'
+import DropDownMenu from '../../Components/DropDownMenu/DropDownMenu'
 
 
 function CityDetails() {
@@ -36,6 +37,8 @@ function CityDetails() {
     //This const is part of constructing manually//
     // const [properties, setProperties] = useState([property1])
 
+    //create a state to store the number of bedrooms that the USER chooses
+    const [bedroomCount, setBedroomCount] = useState(1)
 
 
     //Function for ALL PROPERTIES IN A CITY
@@ -43,10 +46,10 @@ function CityDetails() {
         
         () => {
             //get the data about the properties in this specific city
-            console.log('all properties in a city is running')
+            // console.log('all properties in a city is running')
             axios.get(`https://unilife-server.herokuapp.com/properties/city/${cityId}`)
             .then(res => {
-                console.log(res.data.response)
+                // console.log(res.data.response)
                 //store in state
                 setProperties(res.data.response)
             })
@@ -54,10 +57,10 @@ function CityDetails() {
 
 
             //get the data about this specific city
-            console.log('data about specific city is running')
+            // console.log('data about specific city is running')
             axios.get(`https://unilife-server.herokuapp.com/cities/${cityId}`)
             .then(res => {
-                console.log(res.data.data[0])
+                // console.log(res.data.data[0])
                 //where do I put this data?
                 setCityInfo(res.data.data[0])
                 
@@ -67,11 +70,26 @@ function CityDetails() {
     )
 
 
-    // const handleSelect = (e) => {
-    //     console.log('handleSelect is working', e.target.value)
-    //     store in state
-    //     setProperties(e.target.value)
-    // }
+    //I need useEffect to run when bedroom count changes
+    useEffect (
+        ()=> {
+            console.log("beds", bedroomCount)
+            //make api call to filter the properties
+            const query={
+                city_id: cityId,
+                bedroom_count: bedroomCount,
+                bathroom_count: 1, //the 1 will become bathCount
+            }
+            axios.post("https://unilife-server.herokuapp.com/properties/filter", {query})
+            .then(res => {
+                console.log(res.data.response)
+                //show THESE properties on the page
+                setProperties(res.data.response)
+            })
+            .catch(err => console.log(err))
+        }, [bedroomCount] //runs when bedroom count changes
+        //[bedroomCount, bathCount] 
+    )
 
     
   return (
@@ -85,42 +103,9 @@ function CityDetails() {
         subheadline="Whatever you're after, we can help you 
         find the right student accomodation for you."></Slider>
 
-        <div className='city-details-filter-bar'>
-            {/*this filters the menu for number of bedrooms, bathrooms, etc*/}
-            {/* <p className='propertyTitle'>Min Bedroom</p>
-            <select onChange={handleSelect} required className='filterBarOption'>
-                {<option value='disable selected'>Any bedroom</option>}
-            </select>
-            <p className='propertyTitle'>Min Bathroom</p>
-            <select className='filterBarOption'>                
-                <option value='disable selected'>Any bathroom</option>
-            </select>
-            <p className='propertyTitle'>Max Price</p>
-            <select className='filterBarOption'>
-                <option value='disable selected'>Any price</option>
-            </select>
-            <p className='propertyTitle'>Home Type</p>
-            <select className='filterBarOption'>
-                <option value='disable selected'>Any type</option>
-            </select> */}
-
-
-            <div className='search-bar-top'>
-                <p>Min Bedroom</p>
-                <p>Min Bathroom</p>
-                <p>Max Price</p>
-                <p>Home Type</p>
-            </div>
-
-            <div className='search-bar-bottom'>
-                <p>Any bedroom</p>
-                <p>Any bathroom</p>
-                <p>Any price</p>
-                <p>Any type</p>
-            </div>
-        </div>
        
-  
+        <DropDownMenu setBedroomCount={setBedroomCount} />
+
         <h2 className='title-card'>{cityInfo?.property_count} Homes in {cityInfo?.name}</h2>
                 
 

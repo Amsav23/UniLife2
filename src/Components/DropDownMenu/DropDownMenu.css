@@ -1,0 +1,23 @@
+.dropdown-container {
+    border: 2px solid var(--lightgray);
+    border-radius: 15px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+
+    width: 80%;
+    /* gap: 15px; */
+    /* position: absolute; */
+    /* bottom: 250px; */
+    padding: 20px;
+}
+
+.dropdown-names {
+    display: flex;
+}
+
+.dropdown-options {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
