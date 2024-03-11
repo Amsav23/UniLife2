@@ -40,6 +40,9 @@ function CityDetails() {
     //create a state to store the number of bedrooms that the USER chooses
     const [bedroomCount, setBedroomCount] = useState(1)
 
+    //create a state to store the number of bathrooms that the USER chooses
+    const [bathroomCount, setBathroomCount] = useState(1)
+
 
     //Function for ALL PROPERTIES IN A CITY
     useEffect (
@@ -70,15 +73,16 @@ function CityDetails() {
     )
 
 
-    //I need useEffect to run when bedroom count changes
+    //I need useEffect to run when bedroom count/bathroom count changes
     useEffect (
         ()=> {
             console.log("beds", bedroomCount)
+            console.log("bathrooms", bathroomCount)
             //make api call to filter the properties
             const query={
                 city_id: cityId,
                 bedroom_count: bedroomCount,
-                bathroom_count: 1, //the 1 will become bathCount
+                bathroom_count: bathroomCount,
             }
             axios.post("https://unilife-server.herokuapp.com/properties/filter", {query})
             .then(res => {
@@ -87,8 +91,7 @@ function CityDetails() {
                 setProperties(res.data.response)
             })
             .catch(err => console.log(err))
-        }, [bedroomCount] //runs when bedroom count changes
-        //[bedroomCount, bathCount] 
+        }, [bedroomCount, bathroomCount] //runs when bedroom count and bathroom count changes
     )
 
     
@@ -104,7 +107,11 @@ function CityDetails() {
         find the right student accomodation for you."></Slider>
 
        
-        <DropDownMenu setBedroomCount={setBedroomCount} />
+        <DropDownMenu 
+            setBedroomCount={setBedroomCount}
+            setBathroomCount={setBathroomCount}
+        />
+
 
         <h2 className='title-card'>{cityInfo?.property_count} Homes in {cityInfo?.name}</h2>
                 

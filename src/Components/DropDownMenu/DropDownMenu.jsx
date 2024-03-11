@@ -1,13 +1,19 @@
 import React from 'react'
 import './DropDownMenu.css'
 
-function DropDownMenu({setBedroomCount}) {
+function DropDownMenu({setBedroomCount, setBathroomCount}) {
 
     function handleBedrooms(e) {
-        console.log('hello', e.target.value)
+        // console.log('hello', e.target.value)
         //what is the user input
         //store the user input in state
         setBedroomCount(e.target.value)
+    }
+
+    function handleBathrooms(e) {
+        console.log("hello bathrooms", e.target.value)
+        //store user input for # of bathrooms in state
+        setBathroomCount(e.target.value)
     }
 
   return (
@@ -20,21 +26,24 @@ function DropDownMenu({setBedroomCount}) {
             <select id="minBedroom"
                     onChange={handleBedrooms}
             >
-                <option value="Any bedroom">Any bedroom</option>
+                <option value="1">Any bedroom</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
             </select>
         </div>
 
         <div className='dropdown-options'>
             <h4>Min Bathrooms</h4>
-            <select id="minBathroom">
-                <option value="Any bathroom">Any bathroom</option>
+            <select id="minBathroom"
+                    onChange={handleBathrooms}
+            >
+                <option value="1">Any bathroom</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="4">4</option>
             </select>
         </div>
 
