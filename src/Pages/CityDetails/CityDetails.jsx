@@ -49,16 +49,22 @@ function CityDetails() {
     //create a state to store the rent/max price that the USER chooses
     const [rent, setRent] = useState()
 
+    const [propertyCount, setPropertyCount] = useState(0)
+
 
     //Function for ALL PROPERTIES IN A CITY
     useEffect (
         
         () => {
+            console.log("page loaded")
             //get the data about the properties in this specific city
             // console.log('all properties in a city is running')
             axios.get(`https://unilife-server.herokuapp.com/properties/city/${cityId}`)
             .then(res => {
-                // console.log(res.data.response)
+                console.log(res.data)
+                console.log(res.data.total)
+                //store the property count
+                setPropertyCount(res.data.total)
                 //store in state
                 setProperties(res.data.response)
             })
@@ -69,7 +75,7 @@ function CityDetails() {
             // console.log('data about specific city is running')
             axios.get(`https://unilife-server.herokuapp.com/cities/${cityId}`)
             .then(res => {
-                // console.log(res.data.data[0])
+                console.log(res.data.data[0])
                 //where do I put this data?
                 setCityInfo(res.data.data[0])
                 
@@ -80,6 +86,7 @@ function CityDetails() {
 
 
     //I need useEffect to run when bedroom count/bathroom count changes
+    //when any of these states change, make the api call to filter the data
     useEffect (
         ()=> {
             console.log("beds", bedroomCount)
@@ -96,12 +103,15 @@ function CityDetails() {
             }
             axios.post("https://unilife-server.herokuapp.com/properties/filter", {query})
             .then(res => {
-                console.log(res.data.response)
+                console.log(res.data)
+                console.log(res.data.count)
+                //store the property count
+                setPropertyCount(res.data.count)
                 //show THESE properties on the page
                 setProperties(res.data.response)
             })
             .catch(err => console.log(err))
-        }, [bedroomCount, bathroomCount, propertyType, rent] 
+        }, [bedroomCount, bathroomCount, propertyType, rent] //dependency array
         //runs when any of the queries above changes
     )
 
@@ -126,7 +136,7 @@ function CityDetails() {
         />
 
 
-        <h2 className='title-card'>{cityInfo?.property_count} Homes in {cityInfo?.name}</h2>
+        <h2 className='title-card'>{propertyCount} Homes in {cityInfo?.name}</h2>
                 
 
         <div className='property-card-space'>

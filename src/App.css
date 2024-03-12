@@ -14,3 +14,7 @@
     --aliceblue: #f0f8ff;
     --greenBlue: #105FAE;
   }
+
+  a {
+    text-decoration: none;
+  }
