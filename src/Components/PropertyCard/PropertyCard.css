@@ -71,7 +71,19 @@
     padding: 20px;
     font-size: 20px;
     display: flex;
-    gap: 10px;
     justify-content: center;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
     border-top: 1px solid var(--lightgray);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.view-home-btn p {
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }

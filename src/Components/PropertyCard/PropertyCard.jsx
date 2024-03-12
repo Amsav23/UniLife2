@@ -36,10 +36,11 @@ function PropertyCard({property}) {
         </div>
       </div>
 
-      <div className='view-home-btn'>
-        <Link to={`/homedetails/${property?._id}`}><button className='property-details-icon'>
-          <PiHouse />View Homes</button></Link>
-      </div>
+      <button className='view-home-btn'>
+        <Link to={`/homedetails/${property?._id}`}>
+          <p><PiHouse />View Home</p>
+        </Link>
+      </button>
 
     </div>
   )

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './SeeAllCities.css'
 import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 
 function SeeAllCities() {
@@ -10,13 +11,17 @@ function SeeAllCities() {
     //create state for cities
     const [cities, setCities] = useState([])
 
-    // //create state for individual city?
-    // const [city, setCity] = useState([])
+    //create state for city selection
+    const [selectCity, setSelectCity] = useState()
+
+    const {cityId} = useParams()
+    //hhttps://unilife-server.herokuapp.com/properties/city/633a96af6893d471a68cc88f
+
 
     useEffect(
         () => {
             //make API call to get All of the cities
-            console.log("running useEffect")
+            // console.log("running useEffect")
             axios.get(`https://unilife-server.herokuapp.com/cities?limit=20`)
             .then(res => {
                 console.log(res.data.response)
@@ -26,6 +31,19 @@ function SeeAllCities() {
             .catch(err => console.log(err))
             }, [] //runs only once when page loads
     )
+
+    //I need useEffect to run when a city is selected
+    useEffect (
+        () => {
+            console.log("running useEffect for selectCity")
+            axios.get(`https://unilife-server.herokuapp.com/properties/city/${cityId}`)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => console.log(err))
+        }, [selectCity] //runs once when user selects a city
+    )
+
 
     // each city needs to link to City Details
     // need details of each city
@@ -45,10 +63,11 @@ function SeeAllCities() {
     // )
 
 
-    //use onClick function
-    const handleClick = (e) => {
-        e.preventDefault();
-        console.log('city was selected')
+
+    const handleCitySelection = (e) => {
+        console.log("hello city", e.target.value)
+        //store user input for city selection
+        setSelectCity(e.target.value)
     }
     
 
@@ -63,15 +82,15 @@ function SeeAllCities() {
             <h1>Search by City</h1>
             <div className='city-btns'>
             {
-                // <button onClick={handleClick}>Click here</button>
                 cities.map(item =>
-                    <button onClick={handleClick}>
+                    <button onClick={handleCitySelection}>
                         <option value={item.id} key={item._id}>{item.name}</option>
                     </button>
                 ) //this maps all of the cities
                 }
             </div>
         </div>
+
     </div>
 
   )
