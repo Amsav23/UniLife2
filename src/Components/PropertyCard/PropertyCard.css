@@ -3,12 +3,11 @@
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    width: 28%;
+    width: 25em;
     cursor: default;
 }
 
 .property-card-container img {
-    width: 100%;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 }
@@ -17,6 +16,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 1.1em;
 }
 
 .blue-box {
@@ -35,7 +35,7 @@
 }
 
 .blue-box-left p {
-    font-size: 13px;
+    font-size: .8em;
 }
 
 .blue-box-right {
@@ -44,35 +44,32 @@
     align-items: center;
     justify-content: space-around;
     width: 35%;
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 .white-box {
     display: flex;
     flex-direction: column;
-    height: 100px;
-    padding: 20px 0;
-    gap: 20px;
+    padding: 30px 0;
+    gap: 25px;
 }
 
 .white-box-top {
-    font-size: 20px;
+    font-size: 1.4em;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
 }
 
 .white-box-bottom {
-    font-size: 15px;
     margin-left: 20px;
 }
 
 .view-home-btn {
-    padding: 20px;
-    font-size: 20px;
+    padding: 20px 0;
+    font-size: 1.25em;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     border-bottom: none;
     border-left: none;
     border-right: none;

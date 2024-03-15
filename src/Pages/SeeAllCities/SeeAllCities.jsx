@@ -81,6 +81,7 @@ function SeeAllCities() {
         <div className='searchByCity-container'>
             <h1>Search by City</h1>
             <div className='city-btns'>
+                
             {
                 cities.map(item =>
                     <button onClick={handleCitySelection}>

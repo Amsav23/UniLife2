@@ -34,7 +34,7 @@ function DropDownMenu({setBedroomCount, setBathroomCount, setPropertyType, setRe
 
         <div className='dropdown-options'>
             <h4>Min Bedrooms</h4>
-            <select id="minBedroom"
+            <select className='options' id="minBedroom"
                     onChange={handleBedrooms}
             >
                 <option value="1">Any bedroom</option>
@@ -49,7 +49,7 @@ function DropDownMenu({setBedroomCount, setBathroomCount, setPropertyType, setRe
 
         <div className='dropdown-options'>
             <h4>Min Bathrooms</h4>
-            <select id="minBathroom"
+            <select className='options' id="minBathroom"
                     onChange={handleBathrooms}
             >
                 <option value="1">Any bathroom</option>
@@ -60,7 +60,7 @@ function DropDownMenu({setBedroomCount, setBathroomCount, setPropertyType, setRe
 
         <div className='dropdown-options'>
             <h4>Max Price</h4>
-            <select id="anyPrice"
+            <select className='options' id="anyPrice"
                     onChange={handleRent}
             >
                 <option value="">Any price</option>
@@ -75,7 +75,7 @@ function DropDownMenu({setBedroomCount, setBathroomCount, setPropertyType, setRe
 
         <div className='dropdown-options'>
             <h4>Home Type</h4>
-            <select id="homeType"
+            <select className='options' id="homeType"
                     onChange={handlePropertyType}
             >
                 <option value="">Any type</option>

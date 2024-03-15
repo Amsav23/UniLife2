@@ -35,13 +35,12 @@
   }
   
   .slider-text h1 {
-    font-size: 64px;
+    font-size: 4em;
     font-weight: 500;
     margin-bottom: 10px;
   }
   
   .slider-text h4 {
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: 400;
-    width: 90%;
   }
