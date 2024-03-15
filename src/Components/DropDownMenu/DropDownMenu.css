@@ -27,4 +27,7 @@
     width: 13em;
     height: 2em;
     padding-left: .4em;
+    border-radius: 10px;
+    color: var(--lightgray);
+    border: solid 1px var(--lightgray);
 }
