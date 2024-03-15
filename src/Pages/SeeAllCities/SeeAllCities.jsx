@@ -45,25 +45,6 @@ function SeeAllCities() {
     )
 
 
-    // each city needs to link to City Details
-    // need details of each city
-    // info about a single property URL
-    // https://unilife-server.herokuapp.com/properties/6364c5fdfff841b8724baccd
-
-    // useEffect(
-    //     () => {
-    //         //make API call to get single property
-    //         console.log("running second useEffect")
-    //         axios.get(`https://unilife-server.herokuapp.com/properties/${property_id}`)
-    //         .then(
-    //             console.log(res)
-    //         )
-    //         .catch(err => console.log(err))
-    //     }, [] //runs only once when page loads
-    // )
-
-
-
     const handleCitySelection = (e) => {
         console.log("hello city", e.target.value)
         //store user input for city selection
@@ -81,13 +62,12 @@ function SeeAllCities() {
         <div className='searchByCity-container'>
             <h1>Search by City</h1>
             <div className='city-btns'>
-                
-            {
-                cities.map(item =>
-                    <button onClick={handleCitySelection}>
-                        <option value={item.id} key={item._id}>{item.name}</option>
-                    </button>
-                ) //this maps all of the cities
+                {
+                    cities.map(item =>
+                        <button onClick={handleCitySelection}>
+                            <option value={item.id} key={item._id}>{item.name}</option>
+                        </button>
+                    ) //this maps all of the cities
                 }
             </div>
         </div>
