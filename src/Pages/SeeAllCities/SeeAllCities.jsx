@@ -3,6 +3,7 @@ import './SeeAllCities.css'
 import Slider from '../../Components/Slider/Slider'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 function SeeAllCities() {
@@ -64,10 +65,11 @@ function SeeAllCities() {
             <div className='city-btns'>
                 {
                     cities.map(item =>
-                        <button onClick={handleCitySelection}>
-                            <option value={item.id} key={item._id}>{item.name}</option>
-                        </button>
+                        <Link to={`/citydetails/${item._id}`}>
+                            <p key={item._id}>{item.name}</p>
+                        </Link>
                     ) //this maps all of the cities
+                    //to={`/citydetails/${city._id}`}
                 }
             </div>
         </div>

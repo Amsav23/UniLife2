@@ -23,12 +23,12 @@ function CityInfoBox({property}) {
   }
 
   //Make to bind modal to your element
-  Modal.setAppElement(document.getElementById("#root"))
+  Modal.setAppElement(document.getElementById("root"))
 
   //create state to Control my Modal
   const [isOpen, setIsOpen] = React.useState(false)
 
-  
+
   return (
     <div className='city-info-container'>
 
@@ -82,39 +82,41 @@ function CityInfoBox({property}) {
                 <div className='title-icon'><MdOutlineAddHomeWork /></div>
               </div>
                   
-              <p className='address'>Holmes Camden, etc address</p>
-              <p className='address'>more about the address</p>
-
-                  <div className='form-container'>
-                    <div className='form-container-left'>
-                      <div className='small-box'>
-                        <h4>Name</h4>
-                        <input placeholder='Enter your name' />
-                      </div>
-                      
-
-                      <div className='small-box'>
-                        <h4>Email</h4>
-                        <input placeholder='Enter your email address' />
-                      </div>
-                      
-
-                      <div className='small-box'>
-                        <h4>Phone Number</h4>
-                        <input placeholder='Enter your phone number' />
-                      </div>
-                    </div>
-                    
-                    <div className='form-container-right'>
-                      <div className='small-box'>
-                        <h4>Message</h4>
-                        <input placeholder='Enter your message' />
-                      </div>
-                      
-                      <button className='submit-btn'>Submit</button>
-                    </div>
-                  </div>
+              <div className='address'>
+                <p>{property?.address?.city}</p>
+                <p>more about the address</p>
               </div>
+
+              <div className='form-container'>
+                <div className='form-container-left'>
+                  <div className='small-box'>
+                    <h4>Name</h4>
+                    <input placeholder='Enter your name' />
+                  </div>
+                  
+
+                  <div className='small-box'>
+                    <h4>Email</h4>
+                    <input placeholder='Enter your email address' />
+                  </div>
+                  
+
+                  <div className='small-box'>
+                    <h4>Phone Number</h4>
+                    <input placeholder='Enter your phone number' />
+                  </div>
+                </div>
+                
+                <div className='form-container-right'>
+                  <div className='small-box'>
+                    <h4>Message</h4>
+                    <input placeholder='Enter your message' />
+                  </div>
+                  
+                  <button className='submit-btn'>Submit</button>
+                </div>
+              </div>
+            </div>
       </Modal>      
 
     </div>
