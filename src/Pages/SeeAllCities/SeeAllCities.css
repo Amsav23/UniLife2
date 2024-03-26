@@ -2,17 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    /* flex-wrap: wrap; */
 }
 
 .searchByCity-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 55px;
-    min-height: 30rem;
-    min-width: 85rem;
-    margin: 4rem;
+    margin: 100px;
+    width: 85rem;
+    gap: 40px;
+}
+
+.searchByCity-container h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .city-btns {
@@ -20,16 +24,17 @@
     gap: 20px;
     grid-template-columns: [col1-start] auto [col2-start] auto [col3-start] auto 
     [col3-end] auto [col4-start];
+    margin: 0px;
+    /* flex-wrap: wrap; */
 }
 
-.city-btns button {
-    border: .5px solid var(--gray);
-    border-radius: 15px;
-    background-color: var(--white);
+.city-btns p {
+    color: black;
+    border: .5px solid var(--lightgray);
+    border-radius: 18px;
     padding: 20px 60px;
     font-size: 1.5rem;
-}
-
-.city-btns option {
     font-weight: bold;
+    display: flex;
+    justify-content: center;
 }

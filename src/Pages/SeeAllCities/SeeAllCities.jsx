@@ -46,11 +46,11 @@ function SeeAllCities() {
     )
 
 
-    const handleCitySelection = (e) => {
-        console.log("hello city", e.target.value)
-        //store user input for city selection
-        setSelectCity(e.target.value)
-    }
+    // const handleCitySelection = (e) => {
+    //     console.log("hello city", e.target.value)
+    //     //store user input for city selection
+    //     setSelectCity(e.target.value)
+    // }
     
 
   return (
@@ -69,7 +69,6 @@ function SeeAllCities() {
                             <p key={item._id}>{item.name}</p>
                         </Link>
                     ) //this maps all of the cities
-                    //to={`/citydetails/${city._id}`}
                 }
             </div>
         </div>
